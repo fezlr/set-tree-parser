@@ -82,11 +82,17 @@ public class Lexer {
                                 stringBuilder.append(advance());
                             }
 
+                            if (isAtEnd()) {
+                                throw new IllegalArgumentException("There is no second \" ");
+                            }
+
                             // skip "
                             advance();
 
                             list.add(new Token(TokenType.STRING, stringBuilder.toString(), startPos));
 
+                        } else {
+                            throw new IllegalArgumentException("Not a legal symbol=" + peek() + " at position " + pos);
                         }
                     }
                 }
