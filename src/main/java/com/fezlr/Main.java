@@ -8,6 +8,7 @@ import com.fezlr.set_tree_parser.printer.TreePrinter;
 import com.fezlr.set_tree_parser.stats.Stats;
 import com.fezlr.set_tree_parser.stats.StatsAssemble;
 
+import java.sql.SQLOutput;
 import java.util.List;
 
 public class Main {
@@ -30,6 +31,7 @@ public class Main {
             System.out.println("Max depth: " + stats.maxDepth());
             System.out.println("Numbers: " + stats.numberCount());
             System.out.println("Identifiers: " + stats.identifierCount());
+            System.out.println("Strings: " + stats.stringCount());
             System.out.println("Sets: " + stats.setCount());
 
         } catch(Exception e) {
